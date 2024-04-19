@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family History AI Image Generator</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <!-- JS -->
+  <script src="/js/functions.js" defer></script>
+  <style>
+    form input,
+    form label,
+    form p,
+    form .radioSelector>label {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/generate" method="post" id="imageSubmissionForm">
+    <!-- Relative information inputs -->
+    <h2>Relative Information</h2>
+    <div id="titleUnderline"></div>
+
+    <!--First and last name of relative-->
+    <label for="txtFirstName">First Name</label>
+    <input type="text" id="txtFirstName" name="firstName" placeholder="Relative's first name" title="Enter your relative's/ancestor's first name" value="John" required>
+    <label for="txtLastName">Last Name</label>
+    <input type="text" id="txtLastName" name="lastName" placeholder="Relative's last name" title="Enter your relative's/ancestor's last name" value="Doe" required>
+
+    <!--Gender of relative-->
+    <p>Gender</p>
+    <div class="radioSelector">
+      <input type="radio" id="maleRadio" value="male" name="gender" checked required>
+      <label for="maleRadio">Male</label>
+      <input type="radio" id="femaleRadio" value="female" name="gender" required>
+      <label for="femaleRadio">Female</label>
+    </div>
+
+    <!-- Race / Ethnicity of relative -->
+    <p>Ethnicity</p>
+    <div class="radioSelector">
+      <input type="radio" id="caucasianRadio" value="caucasian" name="ethnicity" checked required>
+      <label for="caucasianRadio">Caucasian</label>
+      <input type="radio" id="africanAmericanRadio" value="african american" name="ethnicity" required>
+      <label for="africanAmericanRadio">African American</label>
+      <input type="radio" id="hispanicLatinoRadio" value="hispanic/latino" name="ethnicity" required>
+      <label for="hispanicLatinoRadio">Hispanic / Latino</label>
+      <input type="radio" id="asianRadio" value="asian" name="ethnicity" required>
+      <label for="asianRadio">Asian</label>
+      <input type="radio" id="nativeAmericanRadio" value="native american" name="ethnicity" required>
+      <label for="nativeAmericanRadio">Native American</label>
+      <input type="radio" id="pacificIslanderRadio" value="pacific islander" name="ethnicity" required>
+      <label for="pacificIslanderRadio">Pacific Islander</label>
+    </div>
+
+    <!--Year relative was born-->
+    <label for="numYearBorn">Year Born</label>
+    <input type="number" id="numYearBorn" name="birthYear" placeholder="1850" min="0" max="2024" title="Enter your relative's/ancestor's birth year" value="1819" required>
+
+    <!--Desired age of relative to be in photo-->
+    <label for="numAge">Age in Photo</label>
+    <input type="number" id="numAge" name="age" min="0" max="150" placeholder="45" title="Enter the desired age for your relative to be in the photo" value="25" required>
+
+    <!--Desired location relative to be in photo-->
+    <label for="textCountry">Country of Residence</label>
+    <input type="text" id="textCountry" name="country" placeholder="United Kingdom, Spain, etc." title="Enter your relative's country of residence" value="United Kingdom" required>
+
+    <!-- Short description-->
+    <label for="textShortDescription">Short Description (Optional)</label>
+    <input type="text" id="textShortDescription" name="description" maxlength="50" placeholder="Possible facial features, occupation, social class, etc." title="Enter possible descriptions of your relative to be in the photo" value="goatee">
+
+    <!--Desired photo style-->
+    <p>Photo Style</p>
+    <div class="radioSelector">
+      <input type="radio" id="grayscaleRadio" value="grayscale" name="photoStyle" checked required>
+      <label for="grayscaleRadio">Grayscale</label>
+      <input type="radio" id="colorRadio" value="color" name="photoStyle" required>
+      <label for="colorRadio">Color</label>
+    </div>
+
+    <!-- Other Relative Image Link -->
+    <label for="imageLink">Other Relative Image Link</label>
+    <input type="text" id="imageLink" name="imageLink" maxlength="100" title="Enter the link for another relative's photo." value="https://tree-portraits-pgp.familysearchcdn.org/qvpcl/thumb200s.jpg">
+
+    <!-- Submit -->
+    <button type="submit" onclick="showLoading()">Generate Images</button>
+  </form>
+
+  <!-- Loading Icon/Text Container -->
+  <div id="loadingIconContainer" style="display: none;">
+
+    <!-- Loading Icon -->
+    <div id="loadingIcon">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Loading Icon Text -->
+    <p id="loadingIconText">Generating Images...</p>
+  </div>
+</body>
+
+</html>

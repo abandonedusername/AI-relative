@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family History AI Image Generator</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/imageView.css">
+  <!-- JS -->
+  <script src="/js/functions.js" defer></script>
+</head>
+
+<body>
+  <div id="imagePageContainer">
+    <div id="imageContainer">
+      <!-- Generated Image -->
+      <img id="generatedImage" src="<%= imageUrl %>" alt="Generated Image">
+      <!-- Select Image Buttons -->
+      <div id="imageSelectContainer">
+        <div>
+          <button onclick="saveImage(1)">Save Image</button>
+        </div>
+        <div>
+          <button onclick="saveImage(2)">Save Image</button>
+        </div>
+        <div>
+          <button onclick="saveImage(3)">Save Image</button>
+        </div>
+        <div>
+          <button onclick="saveImage(4)">Save Image</button>
+        </div>
+      </div>
+    </div>
+    <a href="/">Re-Generate Images</a>
+  </div>
+</body>
+
+</html>

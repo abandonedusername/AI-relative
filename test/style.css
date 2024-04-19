@@ -1,0 +1,31 @@
+:root {
+  --primary-color: #6d213c;
+  --primary-color-dark: #4c1e4f;
+
+  --secondary-color: #00406d;
+  --secondary-color-dark: #002a48;
+
+  --tertiary-color: #538f5c;
+
+  --shadow-color: #000000cc;
+
+  --grey-accent: #c0c5c1;
+  --off-white: #fafafa;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+body * {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
